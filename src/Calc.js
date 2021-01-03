@@ -14,7 +14,7 @@ const textNumber = (e) => {
 }
 const setNumber = (e) =>{
     e.preventDefault();
-    if (calci!='Error' ) {
+    if (calci!=='Error' ) {
     try{
     setCalci(calci.concat(e.target.name))
     } catch(error){
