@@ -1,38 +1,91 @@
-.App {
-  text-align: center;
+body{
+  background-color: rgb(198, 211, 209);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.gridcont{
+   box-sizing: border-box; 
+   background-color: rgb(1, 0, 2);
+   display: grid;
+   position: absolute;
+   left: 33%;  
+   top: 10%;   
+   width: 387px;
+   border-style: 20px solid rgb(10, 250, 10);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.inp{
+  box-sizing: border-box;
+ background-color: rgb(148, 76, 124);
+ color: rgb(255, 255, 255);
+ padding: 29px 10px 20px 0px;
+ text-align: end;
+ font-weight: bolder;
+ width: 387px;
+ font-size: x-large;
+ outline: none;
+ border: none;
+ border-bottom-left-radius  : 25px;
+ border-bottom-right-radius: 25px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.items{
+   box-sizing: border-box;
+   padding: 20px 15px;
+   outline: none; 
+   display: grid;
+   grid-template-columns:auto auto auto auto;
+   grid-column-gap : 10px;
+   grid-row-gap :10px;
+}
+.items button{
+  background-color: rgb(173, 151, 170);
+   font-weight: bolder;
+   font-size: x-large;
+   padding: 10px 0px;
+   border-radius : 20px;
+   outline: none;
+   border: none;
+}
+.items button:nth-child(1){
+  grid-column: 1/3;
+  background-color: rgb(165, 121, 165);
+}
+.items button:nth-child(18){
+ grid-column: 3/5;
+  background-color: rgb(148, 76, 124);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+#c{
+  color: white;
+   background-color: rgb(105, 84, 80);
+ }
+ @media only screen and (max-width:800px){
+   .gridcont{
+   left:25%;
+  }
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media only screen and (max-width:650px){
+  .gridcont{
+  left:20%;
+ }
+}
+@media only screen and (max-width:570px){
+  .gridcont{
+  left:13%;
+ }
+}
+@media only screen and (max-width:480px){
+  .gridcont{
+  left:25%;
+  width: 250px;
+ }
+ .inp{
+   width: 250px;
+ }
+}
+@media only screen and (max-width:350px){
+  .gridcont{ 
+  left:17%;
+  width: 220px;
+ }
+ .inp{ 
+   width: 220px;
+ }
 }
