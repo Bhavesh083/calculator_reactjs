@@ -14,11 +14,11 @@ const textNumber = (e) => {
 }
 const setNumber = (e) =>{
     e.preventDefault();
-    if (calci!=='Error' ) {
+    if (calci!=='Enter Again....' ) {
     try{
     setCalci(calci.concat(e.target.name))
     } catch(error){
-        setCalci('Error')
+        setCalci('Enter Again....')
     }
 }
 inputRef.current.focus();
@@ -26,24 +26,29 @@ inputRef.current.focus();
 const clearNumber = (e)=>{
     e.preventDefault();
     setCalci(" ")
-}
-const delNumber = (e)=>{
-    setCalci(calci.slice(0,-1))
-    e.preventDefault();
+    inputRef.current.focus();
 }
 const giveNumber = (e)=>{
     e.preventDefault();
     try{
     setCalci(eval(calci))
 }catch(error){
-    setCalci('Error')
+    setCalci('Enter Again....')
    }
+}
+const delNumber = (e)=>{
+    try{
+        setCalci(calci.slice(0,-1)) 
+    }catch(error){
+         setCalci('Enter Again....')
+       }
+    e.preventDefault(); 
 }
 
 return (
-    <div className='gridcont'>
-        <input className='inp' value={calci} type='text' onChange={(e)=>textNumber(e)} ref={inputRef} />    
-             <div className='items'>
+        <div className='gridcont'>
+            <input className='inp' value={calci} type='text' onChange={(e)=>textNumber(e)} ref={inputRef} />
+            <div className='items'>
                  <button name='c' onClick={(e)=>clearNumber(e)} >C</button>
                  <button name='d' onClick={(e)=>delNumber(e)} >D</button>
                  <button id='c' name='+' onClick={(e)=>setNumber(e)} >+</button>
@@ -62,7 +67,7 @@ return (
                  <button name='.' onClick={(e)=>setNumber(e)} >.</button>
                  <button name='0' onClick={(e)=>setNumber(e)} >0</button>
                  <button name='=' onClick={(e)=>giveNumber(e)} >=</button>
-             </div>       
+                </div>       
     </div>
     )
 }
